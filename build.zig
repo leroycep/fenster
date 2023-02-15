@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     lib.installHeader("fenster.h", "fenster.h");
-    lib.addCSourceFile("fenster.h", &[_][]const u8{});
+    lib.addCSourceFile("examples/minimal-zig/src/fenster.c", &[_][]const u8{});
     if (lib.target.isDarwin()) {
         lib.linkFramework("Cocoa");
     } else if (lib.target.isWindows()) {
